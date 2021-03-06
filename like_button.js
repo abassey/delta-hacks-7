@@ -20,14 +20,11 @@ class LikeButton extends React.Component {
       return 'welcome mentor.';
     }
 
-    return e(
-      'button',
-      { onClick: () => this.setState({ student: true }) },
-      'Student',
-
-      'button',
-      { onClick: () => this.setState({ mentor: true }) },
-      'Mentor'
+    return (
+      <div>
+        <button onClick={this.setState({ student: true })}>Student</button>
+        <button onClick={this.setState({ mentor: true })}>Mentor</button>
+      </div>
     );
   }
 }
