@@ -5,18 +5,29 @@ const e = React.createElement;
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = { 
+      student: false,
+      mentor: false
+     };
   }
 
   render() {
-    if (this.state.liked) {
-      return 'You liked this.';
+    if (this.state.student) {
+      return 'hello student.';
+    }
+
+    if (this.state.mentor) {
+      return 'welcome mentor.';
     }
 
     return e(
       'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
+      { onClick: () => this.setState({ student: true }) },
+      'Student',
+
+      'button',
+      { onClick: () => this.setState({ mentor: true }) },
+      'Mentor'
     );
   }
 }
