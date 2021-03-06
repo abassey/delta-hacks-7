@@ -11,7 +11,7 @@ const MyMessage = ({ message }) => {
         )
     } //otherwise submit message
     return (
-        <div className="message" style={{float:'right', marginRight: '18px', color:'white', backgroundColor: 'rgb(22,188,237,1)' }}>
+        <div className="message" style={{float:'right', marginRight: '18px', color:'white', fontWeight: "bold", backgroundColor: 'rgb(22,188,237,1)' }}>
             {message.text}
         </div>
     );

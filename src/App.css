@@ -218,7 +218,7 @@
   height: 100vh;
 	width: 100%;
   background: rgba(22,188,237,1);
-  background: linear-gradient(90deg, rgba(22,188,237,1) 7%, rgba(22,188,237,1) 17%, rgba(22,188,237,1) 29%, rgba(22,188,237,1) 44%, rgba(22,188,237,1) 66%, rgba(22,188,237,1) 83%, rgba(22,188,237,1) 96%, rgba(22,188,237,1) 100%);
+
   display: flex;
   justify-content: center;
   align-items: center;
