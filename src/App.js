@@ -1,5 +1,3 @@
-import { ChatEngine } from 'react-chat-engine';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,31 +12,32 @@ import './App.css';
 
 import LoginForm from './components/LoginForm';
 
-import { LinkContainer } from "react-router-bootstrap";
+import { HashRouter as Router, NavLink, Route } from 'react-router-dom';
+import Chat from './Chat';
 
 const projectID = '91ab2466-2b27-4441-97ba-23aa187737fc'
 
 export default class App extends Component {
-  
-if (!localStorage.getItem('username')) return <LoginForm />;
 
   render() {
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav activeKey={window.location.pathname}>
-              <Nav.Link href="#">Home</Nav.Link>
-              <Nav.Link href="#">Matches</Nav.Link>
-              <LinkContainer to="/chat">
-                <Nav.Link href="#">Chats</Nav.Link>
-              </LinkContainer>
-              <Nav.Link href="#">Events</Nav.Link>
-              <Nav.Link href="#">Account</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Router>
+          <Navbar bg="dark" expand="lg">
+              <Nav>
+                <NavLink exact to="/">Home </NavLink>
+                <NavLink exact to="/"> Matches </NavLink>
+                <NavLink exact to="/Chat"> Chats </NavLink>
+                <NavLink exact to="/"> Events </NavLink>
+                <NavLink exact to="/"> Account </NavLink>
+              </Nav>
+          </Navbar>
+          <Route exact path="/" />
+          <Route exact path="/" />
+          <Route exact path="/"  />
+          <Route exact path="/Chat" component={Chat} />
+        </Router>
+        
 
         <section data-section="home-header">
           <Jumbotron fluid>
