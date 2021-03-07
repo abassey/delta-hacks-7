@@ -7,6 +7,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Accordion from 'react-bootstrap/Accordion';
 
 import './App.css';
 
@@ -24,12 +25,12 @@ export default class App extends Component {
       <div>
         <Router>
           <Navbar bg="dark" expand="lg">
-              <Nav>
-                <NavLink exact to="/">Home </NavLink>
-                <NavLink exact to="/"> Matches </NavLink>
-                <NavLink exact to="/Chat"> Chats </NavLink>
-                <NavLink exact to="/"> Events </NavLink>
-                <NavLink exact to="/"> Account </NavLink>
+              <Nav justify variant="pills">
+                <Nav.Item><NavLink exact to="/">Home </NavLink></Nav.Item>
+                <Nav.Item><NavLink exact to="/"> Matches </NavLink></Nav.Item>
+                <Nav.Item><NavLink exact to="/Chat"> Chats </NavLink></Nav.Item>
+                <Nav.Item><NavLink exact to="/"> Events </NavLink></Nav.Item>
+                <Nav.Item><NavLink exact to="/"> Account </NavLink></Nav.Item>
               </Nav>
           </Navbar>
           <Route exact path="/" />
@@ -52,7 +53,7 @@ export default class App extends Component {
 
         <section data-section="interests">
           <div>
-            <h3>Interests</h3>
+            <h3>Current Interests</h3>
             <ListGroup horizontal>
               <ListGroup.Item>Data Science</ListGroup.Item>
               <ListGroup.Item>Cybersecurity</ListGroup.Item>
@@ -69,8 +70,11 @@ export default class App extends Component {
             <Card.Body>
               <Card.Title>Missed Messages</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
+                <ListGroup variant="flush">
+                  <ListGroup.Item action href="#Chat">Data Science is Rad!</ListGroup.Item>
+                  <ListGroup.Item action href="#link1">WFM Tips and Tricks</ListGroup.Item>
+                  <ListGroup.Item action href="#link2">Are the Robots Going To Take Over?</ListGroup.Item>
+                </ListGroup>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -78,8 +82,24 @@ export default class App extends Component {
             <Card.Body>
               <Card.Title>Upcoming Events</Card.Title>
               <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
+                <Accordion defaultActiveKey="0">
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                      Intro To Data Science
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                      <Card.Body>Held by: Mr. LotoTalk</Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="2">
+                      Mathematics and Forensics
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="2">
+                      <Card.Body>Held by: Miss Fibonacci</Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                </Accordion>
               </Card.Text>
             </Card.Body>
           </Card>
