@@ -7,8 +7,11 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default class Home extends Component {
+  
+
   render() {
     return (
       <div>
@@ -39,8 +42,13 @@ export default class Home extends Component {
         <section data-section="interests">
           <div>
             <h3>Interests</h3>
-
-
+            <ListGroup horizontal>
+              <ListGroup.Item>Data Science</ListGroup.Item>
+              <ListGroup.Item>Cybersecurity</ListGroup.Item>
+              <ListGroup.Item>Artificial Intelligence</ListGroup.Item>
+              <ListGroup.Item>Mathematical Finance</ListGroup.Item>
+            </ListGroup>
+            <br/>
           </div>
         </section>
 
@@ -59,7 +67,7 @@ export default class Home extends Component {
             <Card.Body>
               <Card.Title>Upcoming Events</Card.Title>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
+              This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.
               </Card.Text>
             </Card.Body>
